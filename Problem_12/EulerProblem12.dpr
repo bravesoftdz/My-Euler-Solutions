@@ -1,6 +1,6 @@
 program EulerProblem12;
 
-uses windows;
+uses windows; // needed for GetTickCount
 
 procedure findfactorlimit(seed, x : longint);
 
