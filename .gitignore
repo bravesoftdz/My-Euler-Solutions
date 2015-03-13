@@ -45,5 +45,6 @@ Temporary Items
 *.~??
 *.exe
 *.dof
-
+*.dsk
+*.res
 
