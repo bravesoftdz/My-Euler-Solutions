@@ -17,6 +17,12 @@ procedure findfactorlimit(seed, x : longint);
   end;
 
   function numfactorsof(n : longint):longint;
+
+    function isSquare(x : longint):boolean;
+    begin
+     result := x = sqrt(x) * sqrt(x);
+    end;
+
   var count : longint;
       d : longint;
   begin
@@ -26,6 +32,8 @@ procedure findfactorlimit(seed, x : longint);
       if divides(n,d) then
         inc(count,2);
     end;
+    if isSquare(n) then
+      dec(count);
     result := count;
   end;
 

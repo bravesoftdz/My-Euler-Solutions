@@ -11,9 +11,15 @@
   (/ (* n (+ n 1)) 2))
 
 
+
+(define (numsquare? n)
+  (= n (* (sqrt n) (sqrt n))))
+
 (define (numfactorsof n)
   (define (factors-i d count)
-    (cond ((> d (sqrt n)) count)
+    (cond ((> d (sqrt n)) (if (numsquare? n) 
+                              (dec count)
+                              count))
           ((divides? n d) (factors-i (inc d) (+ 2 count)))
           (else (factors-i (inc d) count))))
   (factors-i 1 0))
