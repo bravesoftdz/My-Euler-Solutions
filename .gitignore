@@ -47,4 +47,9 @@ Temporary Items
 *.dof
 *.dsk
 *.res
+*.local
+*.identcache
+*.ico
+
+
 
