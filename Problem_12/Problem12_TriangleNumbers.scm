@@ -10,8 +10,6 @@
 (define (gettriangle n)
   (/ (* n (+ n 1)) 2))
 
-
-
 (define (numsquare? n)
   (= n (* (sqrt n) (sqrt n))))
 
@@ -26,20 +24,12 @@
 
 (define (findfactorlimit seed x)
   (define (finder-i i)
-    (let* ((t (gettriangle i))
-           (nft (numfactorsof t)))
-;      (display i)  
-;      (display " ")
-;      (display t)
-;      (display " ")
-;      (display nft)
-;      (display " ")
-;      (display x)
-;      (display "\n")
-      (if (>= nft x)
+    (let* ((t (gettriangle i)))
+      (if (>= (numfactorsof t) x)
           t
           (finder-i (inc i)))))
   (finder-i seed))
 
-;(findfactorlimit 12374 500)
-(findfactorlimit 1 500)
+(display (findfactorlimit 1 500))
+(newline)
+
